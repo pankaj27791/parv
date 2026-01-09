@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pankaj | Senior EV Engineering & CAPEX Leader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --accent-gold: #854d0e;
+            --accent-gold-light: #fefce8;
+            --success: #059669;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        body { background: #ffffff; color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+
+        .mesh-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
+        }
+
+        .hero-section { padding: 100px 8% 120px; display: flex; align-items: center; justify-content: center; }
+        .hero-container { max-width: 1200px; display: flex; align-items: center; gap: 80px; }
+
+        .hero-img-wrapper { position: relative; flex-shrink: 0; }
+        .hero-img {
+            width: 200px; height: 200px; object-fit: cover; border-radius: 50%;
+            border: 4px solid white; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            z-index: 2; position: relative;
+        }
+
+        .hero-img-wrapper::after {
+            content: ''; position: absolute; top: -12px; left: -12px; right: -12px; bottom: -12px;
+            border: 2px dashed #cbd5e1; border-radius: 50%; animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .hero-text h1 {
+            font-size: 4rem; font-weight: 800; line-height: 1; margin-bottom: 15px;
+            letter-spacing: -2px; background: linear-gradient(to right, #0f172a, #2563eb);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .role-tag { text-transform: uppercase; letter-spacing: 2px; color: var(--primary); font-weight: 800; font-size: 0.85rem; margin-bottom: 10px; display: block; }
+        .hero-text p { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 35px; }
+
+        .contact-group { display: flex; gap: 12px; flex-wrap: wrap; }
+        .contact-btn {
+            text-decoration: none; padding: 12px 24px; border-radius: 12px; font-weight: 700;
+            font-size: 0.85rem; display: flex; align-items: center; gap: 8px; transition: all 0.2s ease;
+        }
+        .btn-email { background: var(--text-main); color: white; }
+        .btn-linkedin { background: #0077b5; color: white; }
+        .btn-phone { background: white; color: var(--text-main); border: 1px solid #e2e8f0; }
+
+        .tabs-nav { display: flex; justify-content: center; gap: 8px; margin-top: -30px; padding: 10px; position: sticky; top: 20px; z-index: 100; }
+        .tab-button {
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8);
+            padding: 14px 24px; border-radius: 14px; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all 0.3s ease;
+        }
+        .tab-button.active { background: white; color: var(--primary); border-color: var(--primary); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+
+        .content-section { max-width: 1200px; margin: 60px auto; padding: 0 5%; }
+        .tab-panel { display: none; animation: fadeIn 0.4s ease; }
+        .tab-panel.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .card { background: white; padding: 35px; border-radius: 24px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .card-award { grid-column: span 2; background: var(--accent-gold-light); border: 1px solid #fde68a; }
+        .card-award h3 { color: var(--accent-gold); font-size: 1.8rem; margin: 10px 0; font-weight: 800; }
+        .card h2 { font-size: 3.2rem; color: var(--primary); margin-bottom: 5px; font-weight: 800; }
+        .card h5 { font-size: 1.1rem; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        .timeline-container { grid-column: span 3; padding: 40px; background: #fff; border: 1px solid #f1f5f9; border-radius: 24px; margin-top: 10px; }
+        .timeline-wrapper { position: relative; padding: 20px 0; margin-top: 20px; }
+        .timeline-line { position: absolute; top: 35px; left: 0; width: 100%; height: 2px; background: #e2e8f0; z-index: 1; }
+        .timeline-items { display: flex; justify-content: space-between; position: relative; z-index: 2; }
+        .t-item { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; text-decoration: none; color: inherit; padding: 0 5px; }
+        .t-dot { width: 14px; height: 14px; background: var(--primary); border: 3px solid white; border-radius: 50%; box-shadow: 0 0 0 2px var(--primary); margin-bottom: 15px; transition: all 0.3s ease; }
+        .t-item:hover .t-dot { transform: scale(1.3); background: var(--success); box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.2); }
+        .t-year { font-size: 0.72rem; font-weight: 800; color: var(--text-muted); }
+        .t-company { font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-top: 4px; transition: color 0.2s; }
+        .t-profile { font-size: 0.65rem; color: var(--text-muted); margin-top: 2px; line-height: 1.2; max-width: 140px; }
+        .t-item:hover .t-company { color: var(--primary); text-decoration: underline; }
+
+        .exp-row {
+            background: white; padding: 35px; border-radius: 24px; border: 1px solid #f1f5f9;
+            display: grid; grid-template-columns: 180px 1fr; gap: 40px; margin-bottom: 20px;
+        }
+        .exp-time { color: var(--primary); font-weight: 800; font-size: 0.95rem; }
+        .company { color: var(--success); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; display: block; margin-bottom: 5px; }
+        .exp-details h4 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; }
+        .exp-details ul { list-style: none; }
+        .exp-details li { margin-bottom: 8px; color: var(--text-muted); font-size: 0.95rem; position: relative; padding-left: 20px; }
+        .exp-details li::before { content: "→"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+
+        .skill-list { list-style: none; }
+        .skill-list li { margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem; position: relative; padding-left: 20px; }
+        .skill-list li::before { content: "•"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+
+        .training-card { 
+            background: #f1f5f9; padding: 20px; border-radius: 16px; margin-bottom: 15px; border-left: 5px solid var(--primary);
+        }
+        .training-card h6 { font-size: 1rem; color: var(--text-main); font-weight: 700; margin-bottom: 8px; }
+        .training-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+
+        footer { background: #0f172a; color: white; padding: 80px 8% 40px; text-align: center; border-radius: 40px 40px 0 0; margin-top: 100px; }
+
+        @media (max-width: 900px) {
+            .hero-container { flex-direction: column; text-align: center; gap: 40px; }
+            .exp-row { grid-template-columns: 1fr; gap: 15px; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .card-award, .timeline-container { grid-column: span 1; }
+            .timeline-line { display: none; }
+            .timeline-items { flex-direction: column; gap: 25px; align-items: flex-start; padding-left: 20px; }
+            .t-item { flex-direction: row; gap: 20px; text-align: left; }
+            .t-dot { margin-bottom: 0; }
+            .t-profile { max-width: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mesh-bg"></div>
+
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-img-wrapper">
+                <img src="profile.png" alt="Pankaj" class="hero-img">
+            </div>
+            <div class="hero-text">
+                <span class="role-tag">Senior Manager | EV 2W/3W R&D | Maintenance | CAPEX Expert</span>
+                <h1>Pankaj</h1>
+                <p>Engineering professional with 15+ years of experience in EV R&D, specializing in 2W/3W powertrain systems, plant mechatronics, installation & commissioning, process improvement, energy conservation, and team/project management..</p>
+                <div class="contact-group">
+                    <a href="mailto:pankaj27791@gmail.com" class="contact-btn btn-email"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://in.linkedin.com/in/pankaj27791" target="_blank" class="contact-btn btn-linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <div class="contact-btn btn-phone"><i class="fas fa-phone"></i> +91-9418032894</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="tabs-nav">
+        <button class="tab-button active" onclick="openTab(event, 'impact')">Strategic Impact</button>
+        <button class="tab-button" onclick="openTab(event, 'experience')">Professional Experience</button>
+        <button class="tab-button" onclick="openTab(event, 'skills')">Expertise</button>
+        <button class="tab-button" onclick="openTab(event, 'education')">Education & Training</button>
+    </div>
+
+    <div class="content-section">
+        
+        <div id="impact" class="tab-panel active">
+            <div class="bento-grid">
+                <div class="timeline-container">
+                    <h5 style="color: var(--primary); margin-bottom: 5px;"><i class="fas fa-industry"></i> Industry Footprint</h5>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Strategic progression through leading automotive and EV organizations.</p>
+                    <div class="timeline-wrapper">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-items">
+                            <a href="https://www.opgmobility.com//" target="_blank" class="t-item">
+                                <div class="t-dot"></div>
+                                <span class="t-year">2025–Present</span>
+                                <span class="t-company">OPG Mobility (Known as Okaya EV)</span>
+                                <span class="t-profile">Major Indian EV manufacturer specializing in 2W mobility.</span>
+                            </a>
+                            <a href="https://revoltmotors.com/" target="_blank" class="t-item">
+                                <div class="t-dot"></div>
+                                <span class="t-year">2023–2025</span>
+                                <span class="t-company">Revolt Motors</span>
+                                <span class="t-profile">Electric Motorcycle Manufacturer.</span>
+                            </a>
+                            <a href="https://gravton.com/" target="_blank" class="t-item">
+                                <div class="t-dot"></div>
+                                <span class="t-year">2022–2023</span>
+                                <span class="t-company">Gravton Motors</span>
+                                <span class="t-profile">EV startup focused on high-performance sustainable 2Ws.</span>
+                            </a>
+                            <a href="https://www.india.ford.com/" target="_blank" class="t-item">
+                                <div class="t-dot"></div>
+                                <span class="t-year">2013–2022</span>
+                                <span class="t-company">Ford India</span>
+                                <span class="t-profile">Global automotive leader's manufacturing arm in India.</span>
+                            </a>
+                            <a href="https://www.eplglobal.com/" target="_blank" class="t-item">
+                                <div class="t-dot"></div>
+                                <span class="t-year">2011–2013</span>
+                                <span class="t-company">Essel Propack</span>
+                                <span class="t-profile">Global leader in specialty packaging.</span>
+                            </a>
+                            <a href="https://sidwal.com/" target="_blank" class="t-item">
+                                <div class="t-dot"></div>
+                                <span class="t-year">2010–2011</span>
+                                <span class="t-company">Sidwal Tech</span>
+                                <span class="t-profile">Precision engineering for defense and HVAC.</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-award">
+                    <span style="font-weight: 800; letter-spacing: 2px; color: var(--accent-gold); font-size: 0.75rem;">
+                        <i class="fas fa-award"></i> ASIA LEVEL ENGINEERING AWARD
+                    </span>
+                    <h3>Mechatronic Innovation Success</h3>
+                    <p>Plant Cost Saving (30 Lacs) by Successfully Spray Booth Chain refurbishment. Strategy adopted by global OEMs as a regional benchmark.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-balance-scale" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <p>CAPEX Strategy</p>
+                    <small>Finalized CAPEX specifications, negotiated, and commissioned purchases for successful trials.</small>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-bolt" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <p>Range Optimization</p>
+                    <small>Vehicle Retune and integration completed to increase Range from 127 to 198KM.</small>
+                </div>
+
+                <div class="card">
+                    <h2>2W & 3W</h2>
+                    <p>Powertrain Specialist</p>
+                    <small>Motor and controller designs integrating advanced technologies and product lines.</small>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-cogs" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <p>Asset Lifecycle</p>
+                    <small>New Machine requirement finalizations, costing, installation and commissioning.</small>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-vial" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <p>Compliance</p>
+                    <small>Executed in-house testing aligned with ICAT standards for validation and compliance.</small>
+                </div>
+            </div>
+        </div>
+
+        <div id="skills" class="tab-panel">
+            <div class="bento-grid">
+                <div class="card">
+                    <h5><i class="fas fa-bolt"></i> 1. EV Powertrain</h5>
+                    <ul class="skill-list">
+                        <li>EV Powertrain Architecture (Motor–Controller–Battery Integration)</li>
+                        <li>BLDC / PMSM Motor Selection & Validation</li>
+                        <li>Motor Controller Calibration & Field Tuning</li>
+                        <li>Battery Pack Integration (LFP / NMC)</li>
+                        <li>BMS Functional Validation & Safety Logic</li>
+                        <li>Regenerative Braking Optimization</li>
+                        <li>Drive Cycle Validation (IDC / AIS / ICAT)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h5><i class="fas fa-plug"></i> 2. Vehicle Integration</h5>
+                    <ul class="skill-list">
+                        <li>Complete Vehicle Electrical Architecture Design</li>
+                        <li>Wiring Harness Design, Testing & Validation</li>
+                        <li>CAN Communication (VCU–MCU–BMS)</li>
+                        <li>EV Diagnostics & Fault Analysis</li>
+                        <li>Charging Systems (AC / Swapping / Fast Charge)</li>
+                        <li>EMI / EMC Compliance Readiness</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h5><i class="fas fa-industry"></i> 3. Manufacturing</h5>
+                    <ul class="skill-list">
+                        <li>EV Plant Maintenance Strategy</li>
+                        <li>Equipment Installation, Commissioning & Ramp-Up</li>
+                        <li>TPM, OEE Improvement & Breakdown Reduction</li>
+                        <li>Automation, Poka-Yoke & Process Digitization</li>
+                        <li>Utilities Management (Electrical, Pneumatic, HVAC)</li>
+                        <li>Spares Planning & AMC Cost Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h5><i class="fas fa-rocket"></i> 4. Plant & Model Launch</h5>
+                    <ul class="skill-list">
+                        <li>Greenfield EV Plant Setup (End-to-End)</li>
+                        <li>New Model Powertrain Integration & SOP Readiness</li>
+                        <li>CAPEX Planning & Vendor Finalization</li>
+                        <li>Trial Builds, Pilot Production & Mass Production</li>
+                        <li>PPAP, APQP & Process Validation</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h5><i class="fas fa-tasks"></i> 5. Quality & Compliance</h5>
+                    <ul class="skill-list">
+                        <li>EV Testing & Validation Strategy</li>
+                        <li>ICAT / ARAI / AIS-156 / AIS-038 Compliance</li>
+                        <li>Root Cause Analysis (8D, Fishbone, 5-Why)</li>
+                        <li>Field Failure Analysis & Warranty Reduction</li>
+                        <li>End-of-Line Testing Systems</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h5><i class="fas fa-users"></i> 6. Leadership</h5>
+                    <ul class="skill-list">
+                        <li>Cross-Functional Team Leadership (20–100+ Members)</li>
+                        <li>Multi-Vendor & Strategic Supplier Management</li>
+                        <li>Cost Reduction (BOM, Maintenance, Energy)</li>
+                        <li>Plant P&L Support & Budget Control</li>
+                        <li>Risk Assessment & Technical Decision Making</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="experience" class="tab-panel">
+            <div class="exp-row">
+                <div class="exp-time">May 2025 – Current</div>
+                <div class="exp-details">
+                    <span class="company">OPG Mobility (Okaya EV)</span>
+                    <h4>Senior Manager</h4>
+                    <ul>
+                        <li>Achieved optimal EV powertrain performance through calibration and optimization efforts.</li>
+                        <li>Finalized new motor and controller designs, integrating advanced technologies.</li>
+                        <li>Developed complete vehicle architecture, including electrical circuits and wire harnesses.</li>
+                        <li>Collaborated on battery chargers to support parallel and single battery charging.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-row">
+                <div class="exp-time">Dec 2023 – May 2025</div>
+                <div class="exp-details">
+                    <span class="company">Revolt Motors Pvt Ltd</span>
+                    <h4>Deputy Manager Engineering - R&D</h4>
+                    <ul>
+                        <li>Optimized and standardized EV powertrain systems by enhancing designs and technologies.</li>
+                        <li>Developed new parts (Speedometer, DC-DC converts, controller etc.) ensuring feasibility.</li>
+                        <li>Finalized CAPEX specifications, negotiated, and commissioned purchases.</li>
+                        <li>Innovated existing models by evaluating new features with minimal modifications.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-row">
+                <div class="exp-time">Jul 2022 – Dec 2023</div>
+                <div class="exp-details">
+                    <span class="company">Gravton Motors Pvt Ltd</span>
+                    <h4>Assistant Manager - Plant Maintenance</h4>
+                    <ul>
+                        <li>Optimized and standardized EV powertrain systems by enhancing designs.</li>
+                        <li>Conducted ICAT-compliant in-house model testing and trained cross-functional teams.</li>
+                        <li>Executed start-up and close-out verifications, ensuring equipment safety standards.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-row">
+                <div class="exp-time">Sep 2013 – Jul 2022</div>
+                <div class="exp-details">
+                    <span class="company">Ford India Pvt Ltd</span>
+                    <h4>Maintenance Engineer - Paint Shop & Powertrain</h4>
+                    <ul>
+                        <li>Ensured optimal operation of Pre-treatment and Electrocoat processes.</li>
+                        <li>Modified PLC controls to enhance safety, quality, and production efficiency.</li>
+                        <li>Implemented global 4D problem-solving tools, reducing machine spare costs significantly.</li>
+                    </ul>
+                </div>
+            </div>
+
+	    <div class="exp-row">
+                <div class="exp-time">Aug 2011 – Jul 2013</div>
+                <div class="exp-details">
+                    <span class="company">Essel Propack Ltd </span>
+                    <h4>Maintenance / Utility Engineer </h4>
+                    <ul>
+                        <li>Managed chillers, air compressors, AHUs, SPUs, and diesel generators.</li>
+                        <li>Oversaw electrical operations and air conditioning systems.</li>
+                        <li>Executed UPS installation projects for tubing lines and printing.</li>
+                        <li>Responsible for running, maintenance, and documentation completion.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-row">
+                <div class="exp-time">Jun 2010 – Aug 2011</div>
+                <div class="exp-details">
+                    <span class="company">Sidwal Technologies </span>
+                    <h4>Maintenance Engineer </h4>
+                    <ul>
+                        <li>Responsible for assembling, checking, and repairing Diesel Engines.</li>
+                        <li>Performed quality checks on Engines and Compressors.</li>
+                        <li>Managed technical documentation completion.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="education" class="tab-panel">
+            <h5 style="color: var(--primary); margin-bottom: 25px;"><i class="fas fa-graduation-cap"></i> Academic Qualifications</h5>
+            <div class="exp-row">
+                <div class="exp-time">2007 – 2010</div>
+                <div class="exp-details">
+                    <span class="company">Lovely Institute of Tech.</span>
+                    <h4>Mechanical Engineering (Polytechnic)</h4>
+                    <p>Focused on core mechanical principles and technical engineering systems.</p>
+                </div>
+            </div>
+
+            <h5 style="color: var(--primary); margin: 40px 0 25px;"><i class="fas fa-tools"></i> Technical Training & Workshops</h5>
+            <div class="training-card">
+                <h6>Advanced Automation & PLC Certification</h6>
+                <p><strong>Provider:</strong> Nettur Technical Training Foundation (NTTF)</p>
+                <p>Specialized training in PLC, Robotics, Hydraulics, Pneumatics, and SCADA systems.</p>
+            </div>
+
+            <div class="training-card">
+                <h6>Rockwell Automation / Allen Bradley PLC Training</h6>
+                <p><strong>Provider:</strong> Ford India Pvt Ltd, Sanand</p>
+                <p>Hands-on training in AB PLC RS Logix 5000 (Control Logix) and Safety Guard Logix.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h2 style="font-size: 2rem; margin-bottom: 30px;">Strategic Engineering. Global Leadership.</h2>
+        <p style="opacity: 0.6; font-size: 0.8rem;">&copy; 2026 PANKAJ | SENIOR EV MANAGER | ASIA-LEVEL AWARD WINNER</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabpanel, tablinks;
+            tabpanel = document.getElementsByClassName("tab-panel");
+            for (i = 0; i < tabpanel.length; i++) { tabpanel[i].classList.remove("active"); }
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+            
+            window.scrollTo({ 
+                top: document.querySelector('.tabs-nav').offsetTop - 40, 
+                behavior: 'smooth' 
+            });
+        }
+    </script>
+</body>
+</html>
